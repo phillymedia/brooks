@@ -4,6 +4,10 @@
     position: relative;
     width: auto;
     height: auto;
+    background-color: #000;
+    @include tablet {
+        background-color: inherit;
+    };
 }
 
 #backgroundImage-1 {
@@ -33,6 +37,7 @@
     background-attachment: fixed;
     background-size: cover;
     background-color: #000;
+    opacity: 0;
     @include tablet {
         min-height: 500px;
         min-height: 100%;
@@ -42,6 +47,7 @@
 }
 
 .overlayText {
+    opacity: 0;
     position: absolute;
     top: auto;
     bottom: 10%;
@@ -55,6 +61,7 @@
     line-height: normal;
     text-shadow: 0 0 15px #000;
     font-size: 72px;
+    z-index: 20;
 
     @include tablet {
         font-size: 68px;
@@ -223,6 +230,7 @@
     overflow-y: auto;
     line-height: 2.25em;
     clear: both;
+    margin-bottom: 60px;
     @include mobile {
         padding-top: 30px;
     }
@@ -244,11 +252,22 @@
     float: left;
     color: #222;
     font-size: 80px;
-    padding-top: 22px;
-    padding-right: 22px;
+    // padding-top: 22px;
+    // padding-right: 22px;
+    padding: 0;
+    line-height: 80px;
     font-weight: 100;
-    padding-left: 3px;
-    font-family: $philly-serif;
+    // padding-left: 3px;
+    font-family: $philly-sans;
+    font-weight: 900;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-right: 20px;
+    text-align: center;
+    display: inline-block;
 }
 
 .containerPhotoCredit {

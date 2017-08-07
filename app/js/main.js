@@ -1,7 +1,13 @@
 var Cookies = require("js-cookie");
 var _ = require('lodash');
+require("./modernizr");
 
 $(document).ready(function() {
+
+    $(".backgroundImage").addClass("fadeImage");
+    $(".overlayText").addClass("fadeHeader");
+
+    $(".cssgrid .gridSection").css("top",$(".header").height() + 4 + "px");
 
 
     if (Cookies('prev_scroll_position')) {
@@ -54,6 +60,16 @@ $(document).ready(function() {
             var window_top_position = $(window).scrollTop();
             if(element_top_position - $(".header").height() <= window_top_position) {
                 scroll_positon = element_top_position - $(".header").height() - 15;
+            }
+        })
+
+        $(".containerQuote").each(function() {
+            var $element = $(this);
+            var element_top_position = $element.offset().top;
+            var window_top_position = $(window).scrollTop();
+
+            if(element_top_position <= window_top_position + ($(window).height()+200)) {
+                $element.css("opacity","1");
             }
         })
 
