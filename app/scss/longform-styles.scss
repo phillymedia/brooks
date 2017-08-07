@@ -7,7 +7,7 @@
 }
 
 #backgroundImage-1 {
-    background-image: url("http://media.philly.com/images/102515-Philadelphia-skyline.jpg");
+    background-image: url("http://media.philly.com/images/RS_1200x800_20170802_SIELSKI31_B_362819026.JPG");
     background-position: left 50% top 79px;
     @include tablet {
         background-position: left 50% top 49px;
@@ -44,17 +44,18 @@
 .overlayText {
     position: absolute;
     top: auto;
-    bottom: 20%;
+    bottom: 10%;
     width: 100%;
     margin: auto;
     text-align: center;
     color: #fff;
     font-family: $philly-sans;
     font-weight: 600;
-    letter-spacing: -5px;
+    letter-spacing: -2px;
     line-height: normal;
     text-shadow: 0 0 15px #000;
-    font-size: 80px;
+    font-size: 72px;
+
     @include tablet {
         font-size: 68px;
         padding: 0 10px;
@@ -72,6 +73,9 @@
         font-size: 2.5rem;
         line-height: 1.05;
     }
+    @include BS-large {
+        padding: 0 10%;
+    };
 }
 
 .backgroundImageCredit {
@@ -239,9 +243,9 @@
 .dropCap {
     float: left;
     color: #222;
-    font-size: 59px;
-    padding-top: 18px;
-    padding-right: 8px;
+    font-size: 80px;
+    padding-top: 22px;
+    padding-right: 22px;
     font-weight: 100;
     padding-left: 3px;
     font-family: $philly-serif;
