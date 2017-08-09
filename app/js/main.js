@@ -19,10 +19,18 @@ $(document).ready(function() {
         $("body").animate({
             scrollTop: prev_scroll_position
         }, 500);
-        $("body").append("<div class='bookmark'><i class='fa fa-bookmark' aria-hidden='true'></i>Bookmarked position</div>");
-        $(".bookmark").css("top", cookieSet + "px");
+        // $("body").append("<div class='bookmark'><i class='fa fa-bookmark' aria-hidden='true'></i>Bookmarked position</div>");
+        // $(".bookmark").css("top", cookieSet + "px");
         $("body, html").css("overflow", "");
         $(".cookie-load").remove();
+        $(".bodyContainer p").each(function() {
+            var $element = $(this);
+            var element_top_position = $element.offset().top;
+            var window_top_position = $(window).scrollTop();
+            if (element_top_position - $(".header").height() - 15 == prev_scroll_position) {
+            $element.prepend("<div class='bookmarkPosition'><i class='fa fa-bookmark' aria-hidden='true'></i>Bookmarked position</div>")
+            }
+        })
     })
 
     $("#cbtn-no").on("click", function() {
@@ -60,7 +68,7 @@ $(document).ready(function() {
             });
         }, 10);
 
-        $("p").each(function() {
+        $(".bodyContainer p").each(function() {
             var $element = $(this);
             var element_top_position = $element.offset().top;
             var window_top_position = $(window).scrollTop();
@@ -95,7 +103,7 @@ $(document).ready(function() {
         // $(".bookmark").css("top", cookieSet + "px");
 
 
-        $("p").each(function() {
+        $(".bodyContainer p").each(function() {
             var $element = $(this);
             var element_top_position = $element.offset().top;
             var window_top_position = $(window).scrollTop();
